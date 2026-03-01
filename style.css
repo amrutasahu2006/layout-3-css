@@ -3,15 +3,16 @@ body{
 }
 
 #outermost-div{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
-    margin-top: 100px;
+    margin: 100px;
 }
 
 .image{
-    width: 450px;
-    height: 300px;
+    width: 100%;
+    height: 100%px;
 }
 
 .read-more{
@@ -21,4 +22,17 @@ body{
 
 .product{
     color: rgb(94, 94, 94);
+}
+
+/* 2. Tablet = 2 columns (below 900px) */
+@media (max-width: 900px) {
+    #outermost-div{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #outermost-div{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
